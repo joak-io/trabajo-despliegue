@@ -1,0 +1,7 @@
+nginx/conf/*.key
+api/pid.txt
+avisos/pid.txt
+logs/*.log
+logs/*_salida.txt
+grande.txt
+__pycache__/
