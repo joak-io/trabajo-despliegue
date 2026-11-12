@@ -1,0 +1,6 @@
+location = /avisos {
+    auth_basic           "Zona de abonados";
+    auth_basic_user_file usuarios.txt;
+    proxy_pass           http://127.0.0.1:8001;
+    proxy_set_header     X-Real-IP $remote_addr;
+}

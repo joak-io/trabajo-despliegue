@@ -1,0 +1,18 @@
+body {
+    font-family: sans-serif;
+    background: #fdf6e3;
+    margin: 2em;
+}
+
+h1 {
+    color: #b33;
+}
+
+nav {
+    background: #222;
+    padding: .5em;
+}
+
+nav a {
+    color: #fc3;
+}
