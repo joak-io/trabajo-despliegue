@@ -1,0 +1,2 @@
+TOTAL para 4 peticiones a la vez: 2.10 s
+TOTAL para 8 peticiones a la vez: 4.14 s
