@@ -1,0 +1,3 @@
+lucia:$apr1$4clZLB89$vDw18H5eRddXdqTzL0pxk0
+pablo:$apr1$b7Qq9hkF$907CL7rIAk8c85Jd0AIEl/
+irene:$apr1$P8lHhwgK$1fWnrubiSQ/IxkvDutAgj/
