@@ -1,0 +1,49 @@
+]633;E;docker ps;7b887887-78c8-44f5-8b8d-a763d19623da]633;CCONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                     NAMES
+541aa5025d81   mi-web    "/docker-entrypoint.…"   14 minutes ago   Up 14 minutes   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   web
+HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 13 Nov 2026 22:43:56 GMT
+Content-Type: text/html
+Content-Length: 696
+Last-Modified: Fri, 13 Nov 2026 22:22:51 GMT
+Connection: keep-alive
+ETag: "6af78dbb-2b8"
+Accept-Ranges: bytes
+
+2026-11-13T22:29:36+00:00 | 172.17.0.1 | HEAD / | 200 | 0 bytes | 0.000 s
+2026-11-13T22:29:45+00:00 | 172.17.0.1 | HEAD /noexiste | 404 | 0 bytes | 0.000 s
+2026-11-13T22:29:54+00:00 | 172.17.0.1 | GET / | 200 | 696 bytes | 0.000 s
+2026-11-13T22:29:54+00:00 | 172.17.0.1 | GET /estilo.css | 200 | 182 bytes | 0.000 s
+2026-11-13T22:29:54+00:00 | 172.17.0.1 | GET /favicon.ico | 404 | 442 bytes | 0.000 s
+2026-11-13T22:29:56+00:00 | 172.17.0.1 | GET /index.html | 200 | 696 bytes | 0.000 s
+2026-11-13T22:29:57+00:00 | 172.17.0.1 | GET /programacion.html | 200 | 506 bytes | 0.000 s
+2026-11-13T22:29:59+00:00 | 172.17.0.1 | GET /sedes.html | 200 | 463 bytes | 0.000 s
+2026-11-13T22:30:00+00:00 | 172.17.0.1 | GET /socios/ | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:01+00:00 | 172.17.0.1 | GET /socios/estilo.css | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:09+00:00 | 172.17.0.1 | GET /socios/ | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:09+00:00 | 172.17.0.1 | GET /socios/estilo.css | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:11+00:00 | 172.17.0.1 | GET /socios/programacion.html | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:11+00:00 | 172.17.0.1 | GET /socios/estilo.css | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:13+00:00 | 172.17.0.1 | GET /socios/index.html | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:13+00:00 | 172.17.0.1 | GET /socios/estilo.css | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:14+00:00 | 172.17.0.1 | GET /socios/sedes.html | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:14+00:00 | 172.17.0.1 | GET /socios/estilo.css | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:15+00:00 | 172.17.0.1 | GET /socios/socios/ | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:15+00:00 | 172.17.0.1 | GET /socios/socios/estilo.css | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:34+00:00 | 172.17.0.1 | GET /socios/socios/programacion.html | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:34+00:00 | 172.17.0.1 | GET /socios/socios/estilo.css | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:37+00:00 | 172.17.0.1 | GET /socios/estilo.css | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:37+00:00 | 172.17.0.1 | GET /socios/estilo.css | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:41+00:00 | 172.17.0.1 | GET /socios/ | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:41+00:00 | 172.17.0.1 | GET /socios/estilo.css | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:42+00:00 | 172.17.0.1 | GET /socios/sedes.html | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:42+00:00 | 172.17.0.1 | GET /socios/estilo.css | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:43+00:00 | 172.17.0.1 | GET /socios/programacion.html | 404 | 442 bytes | 0.000 s
+2026-11-13T22:30:43+00:00 | 172.17.0.1 | GET /socios/estilo.css | 404 | 442 bytes | 0.000 s
+2026-11-13T22:36:51+00:00 | 172.17.0.1 | HEAD / | 200 | 0 bytes | 0.000 s
+2026-11-13T22:37:05+00:00 | 172.17.0.1 | GET / | 200 | 696 bytes | 0.000 s
+2026-11-13T22:40:06+00:00 | 172.17.0.1 | GET /programacion.html | 200 | 506 bytes | 0.000 s
+2026-11-13T22:40:25+00:00 | 172.17.0.1 | GET /estilo.css | 200 | 182 bytes | 0.000 s
+2026-11-13T22:40:46+00:00 | 172.17.0.1 | GET /noexiste | 404 | 442 bytes | 0.000 s
+2026-11-13T22:43:50+00:00 | 172.17.0.1 | HEAD / | 200 | 0 bytes | 0.000 s
+2026-11-13T22:43:56+00:00 | 172.17.0.1 | HEAD / | 200 | 0 bytes | 0.000 s
