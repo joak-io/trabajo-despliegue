@@ -20,14 +20,14 @@ prueba   "en claro, manda a HTTPS"        "$(codigo http://publica.localhost:808
 prueba   "portada"                        "$(codigo $P/)"                                   200
 prueba   "programacion"                   "$(codigo $P/programacion.html)"                  200
 prueba   "sedes"                          "$(codigo $P/sedes.html)"                         200
-prueba   "estilos"                         "$(codigo $P/estilos.css)"                       200
+prueba   "estilos"                         "$(codigo $P/estilo.css)"                       200
 prueba   "pagina inexistente"             "$(codigo $P/pagina-inexistente.html)"            404
-texto    "el 404 es el nuestro"            "Esa pelicula no esta en cartelera"               $P/no-existe.html
+texto    "el 404 es el nuestro"            "Esa pelicula no esta en cartelera"               $P/pagina-inexistente.html
 
 echo "== Cabeceras =="
 cabecera "gzip"                         "Content-Encoding: gzip"                 -H "Accept-Encoding: gzip" $P/
-cabecera "nosniff"                      "X-Content-Type-Options:nosniff"         $P/
-cabecera "X-Frame-Options"              "X-frame-Options:SAMEORIGIN"             $P/
+cabecera "nosniff"                      "X-Content-Type-Options: nosniff"         $P/
+cabecera "X-Frame-Options"              "X-frame-Options: SAMEORIGIN"             $P/
 cabecera "HSTS"                         "Strict-Transport-Security"              $P/
 
 ! curl -skI $P/ | grep -q "Server: nginx/" && echo "OK    Server sin version" || echo "FALLO Server sin version"
@@ -39,9 +39,13 @@ prueba   "abonados, sin usuario"                           "$(codigo $P/socios/)
 prueba   "abonados, con usuario"                           "$(codigo -u lucia:palomitas $P/socios/)"           200    
 prueba   "abonados, con contrasena incorrecta"             "$(codigo -u lucia:mala $P/socios/)"                401    
 
+prueba   "admin"                           "$(codigo $P/admin/)"                             200
+texto    "admin dice Active connections"   "Active connections"                              $P/admin/
+prueba   "oficina, desde aqui 403"         "$(codigo $P/oficina/)"                           403
+
 echo "== Descargas =="
 prueba "descargas"      "$(codigo $D/)"     200
-texto  "descargas dice Index of"      "index of"     200
+texto  "descargas dice Index of"      "Index of"     $D/
 
 echo "== API =="
 prueba   "API, la lista"                   "$(codigo $P/api/peliculas)"                      200
