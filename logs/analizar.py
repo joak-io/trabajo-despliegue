@@ -25,7 +25,7 @@ print("Rutas que dan 404:")
 for ruta, n in Counter(r for r, e in peticiones if e == "404").most_common():
     print(f"   {n}  {ruta}")
 
-print (f"Tiempo Medio: {sum(t, r in tiempos) / len(tiempos):.3f} s")
+print (f"Tiempo Medio: {sum(t for t, r in tiempos) / len(tiempos):.3f} s")
 lenta, ruta = max(tiempos)
 print (f"La mas lenta: {ruta} ({lenta:.3f} s)")
 
