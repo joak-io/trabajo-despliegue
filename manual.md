@@ -25,7 +25,7 @@ Es el servidor web del **Festival de Cine de Verano**: cine al aire libre en pla
 | `programacion.html` | Qué película se proyecta cada noche y a qué hora |
 | `sedes.html` | Dónde se proyecta (Plaza Mayor, Parque del Río, patio del colegio) y cómo llegar |
 
-Además: `estilo.css`, `404.html` (*Esa pelicula no esta en cartelera*), `50x.html` (*Se ha apagado el proyector*) y `socios/index.html`.
+Además: `estilo.css`, `404.html` (*Esa pelicula no esta en la cartelera*), `50x.html` (*Se ha apagado el proyector*) y `socios/index.html`.
 
 **La API** (`/api/peliculas` y `/api/peliculas/<n>`): 1. Cinema Paradiso · 2. El verano de Kikujiro · 3. Los Goonies.
 
@@ -253,7 +253,7 @@ curl -sk -v https://publica.localhost:8443/api/peliculas/2
 | Sedes | `/sedes.html` | 200 | OK |
 | Estilos | `/estilo.css` | 200 | OK |
 | Página inexistente | `/pagina-inexistente.html` | 404 | OK |
-| El 404 es el nuestro | La misma | "Esa pelicula no esta en cartelera" | OK |
+| El 404 es el nuestro | La misma | "Esa pelicula no esta en la cartelera" | OK |
 | gzip | `/` con `Accept-Encoding: gzip` | `Content-Encoding: gzip` | OK |
 | nosniff | `/` | `X-Content-Type-Options: nosniff` | OK |
 | X-Frame-Options | `/` | `X-Frame-Options: SAMEORIGIN` | OK |

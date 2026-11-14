@@ -22,7 +22,7 @@ prueba   "programacion"                   "$(codigo $P/programacion.html)"      
 prueba   "sedes"                          "$(codigo $P/sedes.html)"                         200
 prueba   "estilos"                         "$(codigo $P/estilo.css)"                       200
 prueba   "pagina inexistente"             "$(codigo $P/pagina-inexistente.html)"            404
-texto    "el 404 es el nuestro"            "Esa pelicula no esta en cartelera"               $P/pagina-inexistente.html
+texto    "el 404 es el nuestro"            "Esa pelicula no esta en la cartelera"               $P/pagina-inexistente.html
 
 echo "== Cabeceras =="
 cabecera "gzip"                         "Content-Encoding: gzip"                 -H "Accept-Encoding: gzip" $P/
