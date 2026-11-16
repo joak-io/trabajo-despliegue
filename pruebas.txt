@@ -1,0 +1,33 @@
+== Web publica ==
+OK    en claro, manda a HTTPS
+OK    portada
+OK    programacion
+OK    sedes
+OK    estilos
+OK    pagina inexistente
+OK    el 404 es el nuestro
+== Cabeceras ==
+OK    gzip
+OK    nosniff
+OK    X-Frame-Options
+OK    HSTS
+OK    Server sin version
+== Zonas ==
+OK    abonados, sin usuario
+OK    abonados, con usuario
+OK    abonados, con contrasena incorrecta
+OK    admin
+OK    admin dice Active connections
+OK    oficina, desde aqui 403
+== Descargas ==
+OK    descargas
+OK    descargas dice Index of
+== API ==
+OK    API, la lista
+OK    API, una
+OK    API, una que no existe
+OK    API, X-Real-IP lo pone nginx
+OK    API, mas de 1 KB: 413
+== Avisos por la web ==
+OK    avisos web, sin usuario
+OK    avisos web, con usuario

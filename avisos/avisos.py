@@ -34,7 +34,7 @@ class MiServidor(BaseHTTPRequestHandler):
 
         momento = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         linea = f'{self.client_address[0]} [{momento}] "{self.command} {self.path}" {estado} {len(datos)}'
-        with open("logs/avisos.log", "a", encoding="utf-8") as f:
+        with open("../trabajo1/logs/avisos.log", "a", encoding="utf-8") as f:
             f.write(linea + "\n")
 
 
