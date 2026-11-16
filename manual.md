@@ -2,6 +2,9 @@
 
 Manual para que el cliente, u otra persona, pueda hacerse cargo del servidor sin preguntarnos.
 
+
+Para ver este .MD en el formato correcto, porfavor hacer Ctrl + Shift + V
+
 > Lo que va entre `<<...>>` hay que rellenarlo con los datos reales del equipo donde se monte.
 
 ---
@@ -73,7 +76,7 @@ Todo desde `C:\daw\trabajo1`, en **Git Bash**.
 
 ### La primera vez en un equipo
 
-1. Copiar la carpeta a `C:\daw\trabajo1` (o `git clone <repo> trabajo1` desde `C:\daw`).
+1. Copiar la carpeta a `C:\daw\trabajo1` (o `git clone https://github.com/joak-io/trabajo-despliegue.git trabajo1` desde `C:\daw`).
 2. Instalar las librerías: `pip install -r api/requirements.txt`.
 3. Crear el certificado (la `.key` no viaja con el trabajo):
 
@@ -154,7 +157,7 @@ Es **autofirmado** (lo hemos hecho nosotros), por eso el navegador avisa y curl 
 openssl x509 -in nginx/conf/publica.crt -noout -enddate
 ```
 
-Resultado: `<<notAfter=...>>` (365 días desde que se creó).
+Resultado: `<<notAfter=Nov 16 14:53:44 2027 GMT>>` (365 días desde que se creó).
 
 **Cómo se hace otro**: la orden de la sección 2 ("La primera vez"), y después copiar y recargar (ver Procedimientos).
 
@@ -188,9 +191,9 @@ python logs/analizar.py /c/daw/nginx/logs/publica.log > logs/analisis.txt
 
 Resultado (`logs/analisis.txt`):
 
-- Tiempo medio: `<<...>>` s
-- La más lenta: `<<ruta>>` (`<<...>>` s) — es de la API: nginx tiene que esperar a otro programa.
-- Errores (400 o más): `<<...>>` % — son casi todos **provocados por las pruebas** (401 sin usuario, 403 de la oficina, 404, 413), no fallos reales.
+- Tiempo medio: `<<0.002 >>` s
+- La más lenta: `<</api/quien>>` (`<<0.032 >>` s) — es de la API: nginx tiene que esperar a otro programa.
+- Errores (400 o más): `<<43.8>>` % — son casi todos **provocados por las pruebas** (401 sin usuario, 403 de la oficina, 404, 413), no fallos reales.
 
 ### La concurrencia
 
@@ -215,9 +218,44 @@ python api/cliente.py 8 | tail -1 >> concurrencia.txt
 ```bash
 curl -sk -v https://publica.localhost:8443/api/peliculas/2
 ```
+### Salida:
 
-`<<pegar aquí la salida>>`
-
+```bash
+  Host publica.localhost:8443 was resolved.
+  IPv6: ::1
+  IPv4: 127.0.0.1
+    Trying [::1]:8443...
+    Trying 127.0.0.1:8443...
+  schannel: disabled automatic use of client certificate
+  ALPN: curl offers http/1.1
+  ALPN: server accepted http/1.1
+  Established connection to publica.localhost (127.0.0.1 port 8443) from 127.0.0.1 port 53556 
+  using HTTP/1.x
+  GET /api/peliculas/2 HTTP/1.1
+  Host: publica.localhost:8443
+  User-Agent: curl/8.21.0
+  Accept: /
+ 
+  Request completely sent off
+  schannel: remote party requests renegotiation
+  schannel: renegotiating SSL/TLS connection
+  schannel: SSL/TLS connection renegotiated
+  schannel: remote party requests renegotiation
+  schannel: renegotiating SSL/TLS connection
+  schannel: SSL/TLS connection renegotiated
+  < HTTP/1.1 200 OK
+  < Server: nginx
+  < Date: Mon, 16 Nov 2026 15:20:40 GMT
+  < Content-Type: application/json
+  < Content-Length: 43
+  < Connection: keep-alive
+  < Strict-Transport-Security: max-age=31536000
+  < X-Content-Type-Options: nosniff
+  < X-Frame-Options: SAMEORIGIN
+  < 
+  {"n":2,"pelicula":"El verano de Kikujiro"}
+  Connection #0 to host publica.localhost:8443 left intact
+```
 - Las líneas con `>` son **lo que manda curl**:
   - el **método**: `GET` (pedir algo);
   - la **ruta**: `/api/peliculas/2`;
