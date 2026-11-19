@@ -1,0 +1,6 @@
+{
+  "name": "trabajo-despliegue",
+  "image": "mcr.microsoft.com/devcontainers/python:3-bookworm",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y nginx apache2-utils",
+  "forwardPorts": [80, 8080]
+}
