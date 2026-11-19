@@ -1,1 +1,27 @@
-127.0.0.1 - - [16/Nov/2026 17:22:31] "GET /avisos HTTP/1.0" 200 -
+127.0.0.1 - - [19/Nov/2026 12:39:51] "GET /avisos HTTP/1.0" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 58946)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.15/socketserver.py", line 694, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.15/socketserver.py", line 359, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.15/socketserver.py", line 763, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.15/http/server.py", line 474, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.15/http/server.py", line 462, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/workspaces/trabajo-despliegue/avisos/avisos.py", line 14, in do_GET
+    self.enviar_json(200, AVISOS)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/workspaces/trabajo-despliegue/avisos/avisos.py", line 37, in enviar_json
+    with open("../trabajo1/logs/avisos.log", "a", encoding="utf-8") as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../trabajo1/logs/avisos.log'
+----------------------------------------
