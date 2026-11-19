@@ -1,9 +1,6 @@
 #!/bin/bash
 set -e
 
-# Paquetes del sistema
-sudo apt-get update
-sudo apt-get install -y nginx python3-pip apache2-utils curl
 
 # Dependencias de la API de Daniel
 pip install -r api/requirements.txt
